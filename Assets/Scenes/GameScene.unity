@@ -462,8 +462,8 @@ MonoBehaviour:
   - {fileID: 9153430320556005649, guid: 3f36598d8b1fc9a46b4bbdc2f4dedec1, type: 3}
   - {fileID: 8690323785876357682, guid: a7d7a9b008ae75d45a46cd3266b9f5c0, type: 3}
   - {fileID: 6762327446540773284, guid: 9269db715246619429b631fc886b58ef, type: 3}
-  spawnSpeed: 1
-  positionX: 8.3
+  spawnSpeed: 2
+  positionX: 9
   positionY: -4.1
   moveSpeed: 1.8
 --- !u!4 &1586054558
