@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class foodSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] foodPrefab;
-    [SerializeField] float spawnSpeed = 3f;
+    [SerializeField] float spawnSpeed = 1f;
     [SerializeField] float positionX;
     [SerializeField] float positionY;
     [SerializeField] float moveSpeed = 1f;
