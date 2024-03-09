@@ -1157,7 +1157,7 @@ MonoBehaviour:
   spawnSpeed: 5
   positionX: 9
   positionY: -4.3
-  moveSpeed: 1.8
+  moveSpeed: 5.3
 --- !u!4 &1163058828
 Transform:
   m_ObjectHideFlags: 0
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   spawnSpeed: 1
   positionX: 9
   positionY: -3.4
-  moveSpeed: 1.8
+  moveSpeed: 5.3
 --- !u!4 &1586054558
 Transform:
   m_ObjectHideFlags: 0
@@ -2098,9 +2098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10efd106c31f774e8b6a41af6977d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstEvoTime: 10
-  secondEvoTime: 20
-  thridEvoTime: 30
+  firstEvoTime: 20
+  secondEvoTime: 40
+  thridEvoTime: 60
   evoHunger: 25
   evoValueAll: 10
   evoAValue: 30
