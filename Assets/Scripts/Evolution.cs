@@ -18,6 +18,8 @@ public class Evolution : MonoBehaviour
 
 
     HealthManager_SCPT healthManager;
+    EvolutionForms m_EvolutionForms;
+
     [SerializeField] float firstEvoTime = 100.0f;
     [SerializeField] float secondEvoTime = 200.0f;
     [SerializeField] float thridEvoTime = 300.0f;
@@ -44,6 +46,9 @@ public class Evolution : MonoBehaviour
     {
         GameObject healthManagerObj = GameObject.Find("Bunny");
         healthManager = healthManagerObj.GetComponent<HealthManager_SCPT>();
+
+        GameObject m_EvolutionFormsObj = GameObject.Find("BunnySprite");
+        m_EvolutionForms = m_EvolutionFormsObj.GetComponent<EvolutionForms>();
     }
 
 
@@ -86,7 +91,7 @@ public class Evolution : MonoBehaviour
 
         if (timer >= thridEvoTime && hasReachedEvo3)
         {
-            EvoTwoReached();
+            EvoThreeReached();
             Debug.Log("EVOLUTION 3 REACHED");
             hasReachedEvo3 = false;            
         }
@@ -133,16 +138,21 @@ public class Evolution : MonoBehaviour
         switch (evolution1)
         {
             case "m_steroids":
-                healthManager.HungerMaxLevel += evoHunger + evoAValue;                break;
+                healthManager.HungerMaxLevel += evoHunger + evoAValue;
+                m_EvolutionForms.ChangeSprite(1);
+                break;
             case "m_mutagen":
                 healthManager.HungerMaxLevel += evoHunger + evoBValue;
                 healthManager.RadPoinsoningMaxLevel += evoValueAll;
                 healthManager.SteroidsMaxLevel += evoValueAll;
+                m_EvolutionForms.ChangeSprite(2);
                 break;
             case "m_carrots":
-                healthManager.HungerMaxLevel += evoHunger + evoCValue;                break;
+                healthManager.HungerMaxLevel += evoHunger + evoCValue;                
+                m_EvolutionForms.ChangeSprite(3); break;
             case "m_nuts":
-                healthManager.HungerMaxLevel += evoHunger + evoDValue;                break;
+                healthManager.HungerMaxLevel += evoHunger + evoDValue;               
+                m_EvolutionForms.ChangeSprite(4); break;
         }
     }
 
@@ -156,29 +166,36 @@ public class Evolution : MonoBehaviour
             case 11:
                 healthManager.HungerMaxLevel += evoHunger + evoABValue;
                 healthManager.RadPoinsoningMaxLevel += evoValueAll;
-                healthManager.SteroidsMaxLevel += evoValueAll; 
+                healthManager.SteroidsMaxLevel += evoValueAll;
+                m_EvolutionForms.ChangeSprite(5);
                 break;
             //AC
-            case 10:
-                healthManager.HungerMaxLevel += evoHunger + evoACValue; break;
+            case 101:
+                healthManager.HungerMaxLevel += evoHunger + evoACValue;
+                m_EvolutionForms.ChangeSprite(6); break;
             //AD
             case 1001:
-                healthManager.HungerMaxLevel += evoHunger + evoADValue; break;
+                healthManager.HungerMaxLevel += evoHunger + evoADValue;
+                m_EvolutionForms.ChangeSprite(7); 
+                break;
             //BC
             case 110:
                 healthManager.HungerMaxLevel += evoHunger + evoBCValue;
                 healthManager.RadPoinsoningMaxLevel += evoValueAll;
                 healthManager.SteroidsMaxLevel += evoValueAll;
+                m_EvolutionForms.ChangeSprite(8);
                 break;
             //BD
             case 1010:
                 healthManager.HungerMaxLevel += evoHunger + evoBDValue;
                 healthManager.RadPoinsoningMaxLevel += evoValueAll;
-                healthManager.SteroidsMaxLevel += evoValueAll; 
+                healthManager.SteroidsMaxLevel += evoValueAll;
+                m_EvolutionForms.ChangeSprite(9);
                 break;
             //CD
             case 1100:
-                healthManager.HungerMaxLevel += evoHunger + evoCDValue; break;
+                healthManager.HungerMaxLevel += evoHunger + evoCDValue;
+                m_EvolutionForms.ChangeSprite(10); break;
         }
     }
 
@@ -193,20 +210,29 @@ public class Evolution : MonoBehaviour
             //ABC
             case 111:
                 // Mutated Buff Lots of eyes
+                m_EvolutionForms.ChangeSprite(11);
                 break;
             //ACD
             case 1011:
                 //Mutated Buff Gigabrain
+                m_EvolutionForms.ChangeSprite(12);
                 break;
             //ACD
             case 1101:
+                m_EvolutionForms.ChangeSprite(13);
                 //Buff Big Eyes Big brain
                 break;
             //BCD
-            case 11100:
+            case 1110:
+                m_EvolutionForms.ChangeSprite(14);
                 //Mutated, Lots of Eyes, Gigabrain
                 break;
-            //ABCD?
+
+            case 1111:
+                m_EvolutionForms.ChangeSprite(15);
+                //Mutated, Lots of Eyes, Gigabrain
+                break;
+                //ABCD?
         }
     }
 
