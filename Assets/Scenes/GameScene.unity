@@ -689,8 +689,8 @@ MonoBehaviour:
 
     Radiation: 99/100
 
-    Bunny
-    is NOT feeling well!'
+    Bunny is
+    NOT feeling well!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -801,6 +801,10 @@ MonoBehaviour:
   - {fileID: 9153430320556005649, guid: 3f36598d8b1fc9a46b4bbdc2f4dedec1, type: 3}
   - {fileID: 8690323785876357682, guid: a7d7a9b008ae75d45a46cd3266b9f5c0, type: 3}
   - {fileID: 6762327446540773284, guid: 9269db715246619429b631fc886b58ef, type: 3}
+  - {fileID: 7864086746527475837, guid: 3970ca53948b29447b7205116709abf2, type: 3}
+  - {fileID: 8983751372345811122, guid: 7d56a36739267c04dbd25519f500a1a4, type: 3}
+  - {fileID: 1445556312882316774, guid: 9b06677179dca114d917f5f4f5f454d4, type: 3}
+  - {fileID: 660687613301358060, guid: 76b28216f265a364c8aa6aae55f97a26, type: 3}
   spawnSpeed: 2
   positionX: 9
   positionY: -3.8
