@@ -176,8 +176,7 @@ public class HealthManager_SCPT : MonoBehaviour
 
         statsUI.text = "Bunny is " + bunnyStateDisplay + "!";
 
-        HungerSlider.maxValue = HungerMaxLevel;
-        HungerSlider.value = data.HungerLvl;
+        HungerSlider.maxValue = HungerMaxLevel;        HungerSlider.value = data.HungerLvl;
 
         SteroidsSlider.maxValue = SteroidsMaxLevel;
         SteroidsSlider.value = data.SteroidLvl;
