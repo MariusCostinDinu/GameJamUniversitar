@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class HealthManager_SCPT : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class HealthManager_SCPT : MonoBehaviour
     public int RadiationsModifier;
 
     public TextMeshProUGUI statsUI;
+    public Slider HungerSlider;
+    public Slider SteroidsSlider;
+    public Slider RadiationsSlider;
 
     private void Awake()
     {
@@ -170,23 +174,23 @@ public class HealthManager_SCPT : MonoBehaviour
         else if (data.State == bunnyState.Satiated) bunnyStateDisplay = "feeling Satiated";
         else if (data.State == bunnyState.RadPoinsoning) bunnyStateDisplay = "NOT feeling well";
 
-        statsUI.text = "Hunger: " + data.HungerLvl.ToString() + "/" + HungerMaxLevel.ToString() + "\n" +
-                       "Steroids: " + data.SteroidLvl.ToString() + "/" + SteroidsMaxLevel.ToString() + "\n" +
-                       "Radiation: " + data.RadsLvl.ToString() + "/" + RadPoinsoningMaxLevel.ToString() + "\n" +
-                       "Bunny is " + bunnyStateDisplay + "!";
+        statsUI.text = "Bunny is " + bunnyStateDisplay + "!";
+
+        HungerSlider.maxValue = HungerMaxLevel;
+        HungerSlider.value = data.HungerLvl;
+
+        SteroidsSlider.maxValue = SteroidsMaxLevel;
+        SteroidsSlider.value = data.SteroidLvl;
+
+        RadiationsSlider.maxValue = RadPoinsoningMaxLevel;
+        RadiationsSlider.value = data.RadsLvl;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) { feedBunny("Carrots"); }
-        if (Input.GetKeyDown(KeyCode.W)) { feedBunny("Steroids"); }
-        if (Input.GetKeyDown(KeyCode.E)) { feedBunny("Mutagen"); }
-        if (Input.GetKeyDown(KeyCode.R)) { feedBunny("Ipecac"); }
-        if (Input.GetKeyDown(KeyCode.T)) { feedBunny("Soy"); }
-        if (Input.GetKeyDown(KeyCode.Y)) { feedBunny("Iod"); }
-       // Debug.Log("Hunger: " + data.HungerLvl + " Steroids: " + data.SteroidLvl + " Radiations:" + data.RadsLvl + " State: " + data.State);
-
+        /* Check the state of the bunny */
         checkBunnyState();
+        /* Update the displayed bunny stats */
         updateDisplayedStats();
     }
 }
