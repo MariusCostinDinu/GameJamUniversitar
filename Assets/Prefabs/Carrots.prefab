@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 834588824766970788}
   - component: {fileID: 5047665289486044476}
-  - component: {fileID: 4369618099036807608}
   - component: {fileID: 2148863109436299287}
+  - component: {fileID: 5956003343862796986}
   m_Layer: 0
   m_Name: Carrots
   m_TagString: Untagged
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4369618099036807608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3784842742646802738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f900c1f5f239574c99b941d0c6d557e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2148863109436299287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &5956003343862796986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784842742646802738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0039fc4907b74924faac125fedf5b11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodtype: Carrots

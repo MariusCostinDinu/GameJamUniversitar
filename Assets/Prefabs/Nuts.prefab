@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7718069423905169198}
   - component: {fileID: 1351979909286013608}
-  - component: {fileID: -3633011311936174567}
   - component: {fileID: 6577619340292818686}
+  - component: {fileID: 4908983288765017891}
   m_Layer: 0
   m_Name: Nuts
   m_TagString: Untagged
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3633011311936174567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8690323785876357682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f900c1f5f239574c99b941d0c6d557e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6577619340292818686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &4908983288765017891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690323785876357682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0039fc4907b74924faac125fedf5b11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodtype: Nuts

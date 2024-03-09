@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FoodData_SCPT : MonoBehaviour
 {
-    public struct FoodData
-    {
-        public string name;
-        public string type;
-        public int hunger;
-        /* To be implemented
-        public despawner; */
-    }
+
+    [SerializeField] string foodtype;
+    //public HealthManager_SCPT healthManager;
+    HealthManager_SCPT healthManager;
 
     void Start()
     {
-        
+        GameObject healthManagerObj = GameObject.Find("Bunny");
+        healthManager = healthManagerObj.GetComponent<HealthManager_SCPT>();
+
     }
 
-    void Update()
+    private void OnMouseDown()
     {
-        
+        healthManager.feedBunny(foodtype);
+        Destroy(gameObject);
     }
+
+
 }

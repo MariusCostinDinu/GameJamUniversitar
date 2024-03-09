@@ -23,13 +23,15 @@ public class HealthManager_SCPT : MonoBehaviour
 
     private void Awake()
     {
-        data.HungerLvl = 0;
+        //Starting Stats
+        data.HungerLvl = 35;
         data.RadsLvl = 0;
         data.SteroidLvl = 0;
         data.NutsLvl = 0;
         data.CarrotsLvl = 0;
         data.State = bunnyState.Starving;
-        
+
+        //Decreasing Stats
         InvokeRepeating("bunnyNaturalHunger", 0, UnityEngine.Random.Range(1.0f, 3.0f));
         InvokeRepeating("bunnyNaturalRadsAbsorbtion", 0, UnityEngine.Random.Range(3.0f, 5.0f));
         InvokeRepeating("bunnyNaturalSteroidsAbsortion", 0, UnityEngine.Random.Range(4.0f, 6.0f));
@@ -182,7 +184,7 @@ public class HealthManager_SCPT : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) { feedBunny("Ipecac"); }
         if (Input.GetKeyDown(KeyCode.T)) { feedBunny("Soy"); }
         if (Input.GetKeyDown(KeyCode.Y)) { feedBunny("Iod"); }
-        Debug.Log("Hunger: " + data.HungerLvl + " Steroids: " + data.SteroidLvl + " Radiations:" + data.RadsLvl + " State: " + data.State);
+       // Debug.Log("Hunger: " + data.HungerLvl + " Steroids: " + data.SteroidLvl + " Radiations:" + data.RadsLvl + " State: " + data.State);
 
         checkBunnyState();
         updateDisplayedStats();

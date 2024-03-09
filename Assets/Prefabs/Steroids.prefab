@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1060527040591359336}
   - component: {fileID: 6918261250415034512}
-  - component: {fileID: -7744631926043810444}
   - component: {fileID: 685434728452538458}
+  - component: {fileID: -8134420087791278917}
   m_Layer: 0
   m_Name: Steroids
   m_TagString: Untagged
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7744631926043810444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762327446540773284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f900c1f5f239574c99b941d0c6d557e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &685434728452538458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.23, y: 1.7}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1.91, y: 5.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -143,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &-8134420087791278917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762327446540773284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0039fc4907b74924faac125fedf5b11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodtype: Steroids
