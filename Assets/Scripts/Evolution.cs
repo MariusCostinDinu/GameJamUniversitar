@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 public class Evolution : MonoBehaviour
 {
     private float timer = 0f;
+    private int nrTime, stage = 1;
     private bool hasReachedEvo1 = true;
     private bool hasReachedEvo2 = true;
     private bool hasReachedEvo3 = true;
 
+    public TMP_Text winText;
+    public TMP_Text StageText;
+    public TMP_Text CDText;
 
     private int evolutionValue2, evolutionValue3;
     private string m_max1, m_max2, m_max3;
@@ -75,16 +83,36 @@ public class Evolution : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        switch (stage)
+        {
+            case 1:
+                nrTime = (int)firstEvoTime - (int)timer;
+                CDText.text = nrTime.ToString();                
+                break;
+            case 2:
+                nrTime = (int)secondEvoTime - (int)timer;
+                CDText.text = nrTime.ToString();
+                break;
+            case 3:
+                nrTime = (int)thridEvoTime - (int)timer;
+                break;
+        }
+    
+        
+
+
         if (timer >= firstEvoTime && hasReachedEvo1)
         {
            EvoOneReached();
             Debug.Log("EVOLUTION 1 REACHED");
+            stage = 2;
             hasReachedEvo1 = false;           
         }
 
         if (timer >= secondEvoTime && hasReachedEvo2)
         {
             EvoTwoReached();
+            stage = 3;
             Debug.Log("EVOLUTION 2 REACHED");
             hasReachedEvo2 = false;            
         }
@@ -106,7 +134,7 @@ public class Evolution : MonoBehaviour
 
         CheckHealth();
         Evolution1(m_max1);
-       
+        StageText.text = "Stage 1";
     }
 
     void EvoTwoReached()
@@ -118,6 +146,7 @@ public class Evolution : MonoBehaviour
 
         CheckHealth();
         Evolution2(m_max1,m_max2);
+        StageText.text = "Stage 2";
 
     }
 
@@ -130,6 +159,7 @@ public class Evolution : MonoBehaviour
 
         CheckHealth();
         Evolution3(m_max1, m_max2,m_max3);
+        StageText.text = "Stage 3";
 
     }
 
@@ -234,8 +264,16 @@ public class Evolution : MonoBehaviour
                 break;
                 //ABCD?
         }
+        Invoke("MainMenu", 5f);
+        winText.text = "EVOLUTION COMPLETE";
     }
 
+
+    void MainMenu()
+    {
+        
+        SceneManager.LoadScene("Evolutions");
+    }
     public int EvolutionCheck(string evoChek) {
         int nrCheck = 0;
         switch (evoChek)

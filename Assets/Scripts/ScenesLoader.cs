@@ -23,6 +23,11 @@ public class ScenesLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Evolutions");
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
     
 
