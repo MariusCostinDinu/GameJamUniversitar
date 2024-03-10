@@ -6,12 +6,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 
 public class Evolution : MonoBehaviour
 {
+    private string fileName = "integer.txt";
     private float timer = 0f;
-    private int nrTime, stage = 1;
+    private int nrTime, stage = 0;
     private bool hasReachedEvo1 = true;
     private bool hasReachedEvo2 = true;
     private bool hasReachedEvo3 = true;
@@ -85,16 +87,17 @@ public class Evolution : MonoBehaviour
 
         switch (stage)
         {
-            case 1:
+            case 0:
                 nrTime = (int)firstEvoTime - (int)timer;
                 CDText.text = nrTime.ToString();                
                 break;
-            case 2:
+            case 1:
                 nrTime = (int)secondEvoTime - (int)timer;
                 CDText.text = nrTime.ToString();
                 break;
-            case 3:
+            case 2:
                 nrTime = (int)thridEvoTime - (int)timer;
+                CDText.text = nrTime.ToString();
                 break;
         }
     
@@ -105,14 +108,13 @@ public class Evolution : MonoBehaviour
         {
            EvoOneReached();
             Debug.Log("EVOLUTION 1 REACHED");
-            stage = 2;
+            
             hasReachedEvo1 = false;           
         }
 
         if (timer >= secondEvoTime && hasReachedEvo2)
         {
             EvoTwoReached();
-            stage = 3;
             Debug.Log("EVOLUTION 2 REACHED");
             hasReachedEvo2 = false;            
         }
@@ -134,6 +136,7 @@ public class Evolution : MonoBehaviour
 
         CheckHealth();
         Evolution1(m_max1);
+        stage = 1;
         StageText.text = "Stage 1";
     }
 
@@ -146,6 +149,7 @@ public class Evolution : MonoBehaviour
 
         CheckHealth();
         Evolution2(m_max1,m_max2);
+        stage = 2;
         StageText.text = "Stage 2";
 
     }
@@ -159,6 +163,7 @@ public class Evolution : MonoBehaviour
 
         CheckHealth();
         Evolution3(m_max1, m_max2,m_max3);
+        stage = 3;
         StageText.text = "Stage 3";
 
     }
@@ -240,34 +245,57 @@ public class Evolution : MonoBehaviour
             //ABC
             case 111:
                 // Mutated Buff Lots of eyes
+                WriteToFile(111);
                 m_EvolutionForms.ChangeSprite(11);
                 break;
             //ACD
             case 1011:
                 //Mutated Buff Gigabrain
+                WriteToFile(1011);
                 m_EvolutionForms.ChangeSprite(12);
                 break;
             //ACD
             case 1101:
+                WriteToFile(1101);
                 m_EvolutionForms.ChangeSprite(13);
                 //Buff Big Eyes Big brain
                 break;
             //BCD
             case 1110:
+                WriteToFile(1110);
                 m_EvolutionForms.ChangeSprite(14);
                 //Mutated, Lots of Eyes, Gigabrain
                 break;
 
             case 1111:
+                WriteToFile(1111);
                 m_EvolutionForms.ChangeSprite(15);
                 //Mutated, Lots of Eyes, Gigabrain
                 break;
                 //ABCD?
         }
-        Invoke("MainMenu", 5f);
+        Invoke("MainMenu", 3f);
         winText.text = "EVOLUTION COMPLETE";
     }
 
+
+    public void WriteToFile(int numberToWrite)
+    {
+        // Get the persistent data path for the platform
+        string initialFilePath = Path.Combine(Application.dataPath, fileName);
+
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(initialFilePath))
+            {
+                writer.WriteLine(numberToWrite);
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Error writing integer to file: " + ex.Message);
+        }
+    }
 
     void MainMenu()
     {

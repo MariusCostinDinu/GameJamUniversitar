@@ -6,7 +6,8 @@ using UnityEngine.EventSystems;
 public class foodSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] foodPrefab;
-    [SerializeField] float spawnSpeed = 1f;
+    [SerializeField] float spawnSpeedMin = 1f;
+    [SerializeField] float spawnSpeedMax = 3f;
     [SerializeField] float positionX;
     [SerializeField] float positionY;
     [SerializeField] float moveSpeed = 1f;
@@ -26,7 +27,7 @@ public class foodSpawner : MonoBehaviour
             
             StartCoroutine(MoveLeft(gameObject));
             
-            yield return new WaitForSeconds(spawnSpeed);
+            yield return new WaitForSeconds(Random.Range(spawnSpeedMin, spawnSpeedMax));
 
             Destroy(gameObject, 10f);
         }
