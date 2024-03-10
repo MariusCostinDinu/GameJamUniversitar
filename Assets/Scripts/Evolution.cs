@@ -99,6 +99,10 @@ public class Evolution : MonoBehaviour
                 nrTime = (int)thridEvoTime - (int)timer;
                 CDText.text = nrTime.ToString();
                 break;
+            case 3:
+                CDText.text = " ";
+                break;
+
         }
     
         
@@ -164,7 +168,7 @@ public class Evolution : MonoBehaviour
         CheckHealth();
         Evolution3(m_max1, m_max2,m_max3);
         stage = 3;
-        StageText.text = "Stage 3";
+        StageText.text = " ";
 
     }
 
