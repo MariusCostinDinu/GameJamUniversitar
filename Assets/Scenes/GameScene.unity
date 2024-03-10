@@ -3041,7 +3041,7 @@ MonoBehaviour:
   firstEvoTime: 40
   secondEvoTime: 80
   thridEvoTime: 120
-  evoHunger: 25
+  evoHunger: 50
   evoValueAll: 10
   evoAValue: 30
   evoBValue: 35
